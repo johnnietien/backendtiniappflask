@@ -7,6 +7,7 @@ import hmac
 import hashlib
 
 import time
+import os
 
 ###########################
 # Cách tính signature bằng Python tương tự trong bài viết:
