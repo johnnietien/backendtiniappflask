@@ -1,11 +1,14 @@
 # main.py
 from flask import Flask, request
+import auth_helper
 
 app = Flask(__name__)
+
 
 @app.route("/", methods=["GET"])
 def hello_world():
     return "Hello World from Cloud Run!"
+
 
 @app.route("/auth_exchange", methods=["POST"])
 def auth_exchange_handler():
@@ -35,6 +38,7 @@ def auth_exchange_handler():
     ...
     # Chuẩn bị 2 hàm tương tự cho các đường dẫn: /auth_refresh and /auth_info như mô tả trong bài: https://miniapp.tiki.vn/docs/backend-api/platform-api/exchange-auth-token
     ...
+
 
 if __name__ == "__main__":
     PORT = int(os.getenv("PORT")) if os.getenv("PORT") else 8080
